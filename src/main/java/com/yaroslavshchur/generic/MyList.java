@@ -1,25 +1,34 @@
 package main.java.com.yaroslavshchur.generic;
 
 import java.util.ArrayList;
-import java.util.Collections;
+public class MyList <T extends Number> {
+    private ArrayList<T> myList;
 
-public class MyList<T extends Comparable<? super T>> {
-   arrayList = new ArrayList<>();
-
-    public void add(T addType) {
-        arrayList.add(addType);
+    public MyList() {
+        this.myList = new ArrayList<>();;
     }
 
-    public T getMaxValue() {
-        return Collections.max(arrayList);
+    public void add(T elem) {
+        myList.add(elem);
     }
 
-    public T getMinValue() {
-        return Collections.min(arrayList);
+    public T getMin() {
+        T min = myList.get(0);
+        for (T elem : myList) {
+            if (elem.doubleValue() < min.doubleValue()) {
+                min = elem;
+            }
+        }
+        return min;
     }
 
-    @Override
-    public java.lang.String toString() {
-        return "MyList: " + arrayList;
+    public T getMax(){
+        T max = myList.get(0);
+        for (T elem : myList) {
+            if (elem.doubleValue() > max.doubleValue()) {
+                max = elem;
+            }
+        }
+        return max;
     }
 }
