@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MyList<T extends Comparable<? super T>> {
-
-    ArrayList<T> arrayList = new ArrayList<>();
+   arrayList = new ArrayList<>();
 
     public void add(T addType) {
         arrayList.add(addType);
@@ -24,4 +23,3 @@ public class MyList<T extends Comparable<? super T>> {
         return "MyList: " + arrayList;
     }
 }
-
